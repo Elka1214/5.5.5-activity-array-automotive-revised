@@ -53,12 +53,23 @@ class Vehicle {
 	}
 	stop() {
 		this.started = false;
+		console.log('engine off')
 	}
 
 	//optional methods to code for the Vehicle base class
 
 	drive() {
 		accelerate();
+		if (this.started) {
+			if (this.fuel > 0) {
+				console.log (this.speed +=1) ;
+				this.fuel = this.fuel - 1;
+            } else {
+                console.log("");
+                this.stop();
+			}
+		}
+	
 	}
 	brake() {
 		decelerate();
